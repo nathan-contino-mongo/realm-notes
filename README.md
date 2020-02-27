@@ -561,6 +561,22 @@ Data Models
     query for the back object
 - native .NET binding does two-way binding to push/pull updates, very
   little boilerplate needed
+- short example:
+```
+// Dog model
+public class Dog : RealmObject
+{
+    public string Name { get; set; }
+    public int Age { get; set; }
+    public Person Owner { get; set; }
+}
+
+public class Person : RealmObject
+{
+    public string Name { get; set; }
+    public IList<Dog> Dogs { get; }
+}  
+```
 
 Connecting
 ----------
